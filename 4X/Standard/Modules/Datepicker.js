@@ -881,13 +881,13 @@ License: MIT <https://opensource.org/licenses/MIT>
                   ) {
                     // initialDate config value is outside of the valid date range, determine an optimal initial date value
                     if (dc.initialDate < dc.minDate) {
-                      dateObj = dc.minDate;
+                      dateObj = new Date(dc.minDate.getTime());
                     } else if (dc.initialDate > dc.maxDate) {
-                      dateObj = dc.maxDate;
+                      dateObj = new Date(dc.maxDate.getTime());
                     }
                   } else {
                     // set to initialDate config value
-                    dateObj = dc.initialDate;
+                    dateObj = new Date(dc.initialDate.getTime());
                   }
                 }
 
